@@ -97,9 +97,9 @@ do
 			## if the user chooses to exit return a success code
 			;;
 		"*")
-			echo "TEST"
-#			echo -e "Usage: you must ${yellow}choose a number from 1 to 4 from the options presented to you"
-#			sleep 5
+#			echo "TEST"
+			echo -e "Usage: you must ${yellow}choose a number from 1 to 4 from the options presented to you"
+			sleep 5
 			exit 1
 	esac
 	sleep 5
