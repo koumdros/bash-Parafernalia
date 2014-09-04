@@ -17,12 +17,13 @@ NC='\e[0m' # No Color
 [ $# -ne 1 ] && {  echo -e "\nUsage: Control_VM.sh ${red}VM_NAME${NC}" && echo -e "you must ${yellow}provide the name ${NC}of the VM you need to control\n" ; exit 1;}
 
 ## ===== nikoum modular bash framework ==== 0.03 "preparation"
-##
-
 ## the folowing comand finds the VM's UUID
+
 VMUU=$(xe vm-list name-label="$*" | awk '/uuid/ {print $5}')
+
 ## then we print it to screen
 echo -e "\nVM uuid is : ${green}${VMUU}${NC}\n"
+
 ## then  we search the domains running on this machine to find which one corresponds to it
 
 VMDOM=$(list_domains | grep "$VMUU" | cut -d' ' -f1) 
